@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource} from '@angular/material';
 
 interface Product {
+  id: number;
   name: string;
   description: string;
   price: number;
@@ -9,8 +10,8 @@ interface Product {
 }
 
 const PRODUCTS: Product[] = [
-  {name: 'Apple', description: 'Eat one every day to keep the doctor away!', price: 12, image: ''},
-  {name: 'Grape', description: 'Wine is great, but grapes are even better', price: 8, image: ''},
+  {id: 1, name: 'Apple', description: 'Eat one every day to keep the doctor away!', price: 12, image: ''},
+  {id: 2, name: 'Grape', description: 'Wine is great, but grapes are even better', price: 8, image: ''},
 ];
 
 @Component({
