@@ -5,14 +5,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatInputModule, MatButtonModule, MatSelectModule, MatIconModule } from '@angular/material';
+import {
+  MatInputModule,
+  MatButtonModule,
+  MatSelectModule,
+  MatIconModule,
+  MatTableModule,
+} from '@angular/material';
+
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { FormsModule } from '@angular/forms';
+import { ProductsListComponent } from './products-list/products-list.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProductsListComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +32,8 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
