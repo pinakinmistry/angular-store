@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import {MatTableDataSource} from '@angular/material';
 
 import { Product } from '../product';
+import { Nutrient } from '../nutrient';
 import { ProductService } from '../product.service';
 
 @Component({
@@ -12,6 +14,8 @@ import { ProductService } from '../product.service';
 })
 export class ProductDetailComponent implements OnInit {
   product: Product;
+  displayedColumns: string[] = ['nutrient', 'dailyValue'];
+  dataSource: MatTableDataSource<Nutrient>;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,7 +30,9 @@ export class ProductDetailComponent implements OnInit {
   getProduct(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.productService.getProduct(id)
-      .subscribe(product => this.product = product);
+      .subscribe(product => {
+        this.product = product;
+        this.dataSource = new MatTableDataSource(product.nutrients);
+      });
   }
-
 }
