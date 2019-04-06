@@ -45,19 +45,19 @@ export const PRODUCTS: Product[] = [
       },
       {
         nutrient: 'Fiber',
-        dailyValue: 25,
+        dailyValue: .25,
       },
       {
         nutrient: 'Folates',
-        dailyValue: 50,
+        dailyValue: .50,
       },
       {
         nutrient: 'Potassium',
-        dailyValue: 0,
+        dailyValue: .75,
       },
       {
         nutrient: 'Vitamin C',
-        dailyValue: 50,
+        dailyValue: 1.0,
       },
     ],
   },

@@ -14,7 +14,7 @@ import { ProductService } from '../product.service';
 })
 export class ProductDetailComponent implements OnInit {
   product: Product;
-  displayedColumns: string[] = ['nutrient', 'dailyValue'];
+  displayedColumns: string[] = ['nutrient', 'dailyValue', 'dailyValueText'];
   dataSource: MatTableDataSource<Nutrient>;
 
   constructor(
