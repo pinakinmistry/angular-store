@@ -10,7 +10,7 @@ import { ProductService } from '../product.service';
   styleUrls: ['./products-list.component.scss']
 })
 export class ProductsListComponent implements OnInit {
-  displayedColumns: string[] = ['name', 'price', 'image'];
+  displayedColumns: string[] = ['image', 'name', 'price', 'cartAction'];
   dataSource: MatTableDataSource<Product>;
 
   constructor(private productService: ProductService) { }
