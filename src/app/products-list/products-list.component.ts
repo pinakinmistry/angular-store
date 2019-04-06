@@ -30,4 +30,12 @@ export class ProductsListComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+  addToCart(id: number): void {
+    this.productService.addToCart(id);
+  }
+
+  isProductInCart(id: number): boolean {
+    return this.productService.isProductInCart(id);
+  }
+
 }

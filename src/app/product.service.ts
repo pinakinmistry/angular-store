@@ -9,6 +9,7 @@ import { PRODUCTS } from './mock-products';
   providedIn: 'root'
 })
 export class ProductService {
+  cart: Array<{id: number, quantity: number}> = [];
 
   constructor() { }
 
@@ -16,7 +17,22 @@ export class ProductService {
     return of(PRODUCTS);
   }
 
+  getCart(): Observable<{id: number, quantity: number}[]> {
+    return of(this.cart);
+  }
+
   getProduct(id: number): Observable<Product> {
     return of(PRODUCTS.find(product => product.id === id));
+  }
+
+  isProductInCart(id: number): boolean {
+    return this.cart.some(product => product.id === id);
+  }
+
+  addToCart(id: number): void {
+    this.cart.push({
+      id,
+      quantity: 1,
+    });
   }
 }
