@@ -25,6 +25,10 @@
           <mat-icon>shopping_cart</mat-icon>
           <span>Add to cart</span>
       </button>
+      <button mat-raised-button color="warn" *ngIf="isProductInCart(element.id)">
+          <mat-icon>remove_shopping_cart</mat-icon>
+          <span>Remove from cart</span>
+      </button>
     </td>
   </ng-container>
 

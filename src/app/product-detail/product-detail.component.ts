@@ -36,6 +36,14 @@ export class ProductDetailComponent implements OnInit {
       });
   }
 
+  addToCart(id: number): void {
+    this.productService.addToCart(id);
+  }
+
+  isProductInCart(id: number): boolean {
+    return this.productService.isProductInCart(id);
+  }
+
   goBack(): void {
     this.location.back();
   }
