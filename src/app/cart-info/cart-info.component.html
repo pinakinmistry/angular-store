@@ -1,0 +1,5 @@
+<button mat-button>
+  <mat-icon>shopping_cart</mat-icon>
+  <span>{{getCartSize()}} item{{getCartSize() > 1 ? 's ' : ' '}}</span>
+  <span>{{getCartTotalAmount() | currency}}</span>
+</button>
