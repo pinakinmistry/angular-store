@@ -17,13 +17,15 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { FormsModule } from '@angular/forms';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { CartInfoComponent } from './cart-info/cart-info.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsListComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    CartInfoComponent
   ],
   imports: [
     BrowserModule,

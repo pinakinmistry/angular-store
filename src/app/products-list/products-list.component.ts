@@ -38,14 +38,6 @@ export class ProductsListComponent implements OnInit {
     return this.productService.isProductInCart(id);
   }
 
-  getCartSize(): number {
-    return this.productService.getCartSize();
-  }
-
-  getCartTotalAmount(): number {
-    return this.productService.getCartTotalAmount();
-  }
-
   removeFromCart(id: number): void {
     this.productService.removeFromCart(id);
   }
