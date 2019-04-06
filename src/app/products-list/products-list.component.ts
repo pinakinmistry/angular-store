@@ -1,18 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource} from '@angular/material';
 
-interface Product {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  image: string;
-}
-
-const PRODUCTS: Product[] = [
-  {id: 1, name: 'Apple', description: 'Eat one every day to keep the doctor away!', price: 12, image: ''},
-  {id: 2, name: 'Grape', description: 'Wine is great, but grapes are even better', price: 8, image: ''},
-];
+import { Product } from '../product';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-products-list',
@@ -20,14 +10,21 @@ const PRODUCTS: Product[] = [
   styleUrls: ['./products-list.component.scss']
 })
 export class ProductsListComponent implements OnInit {
+  displayedColumns: string[] = ['name', 'price', 'image'];
+  dataSource: MatTableDataSource<Product>;
 
-  constructor() { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit() {
+    this.getProducts();
   }
 
-  displayedColumns: string[] = ['name', 'price', 'image'];
-  dataSource = new MatTableDataSource(PRODUCTS);
+  getProducts(): void {
+    this.productService.getProducts()
+      .subscribe(products => {
+        this.dataSource = new MatTableDataSource(products);
+      });
+  }
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
