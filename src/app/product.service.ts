@@ -9,7 +9,7 @@ import { PRODUCTS } from './mock-products';
   providedIn: 'root'
 })
 export class ProductService {
-  cart: Array<{id: number, quantity: number}> = [];
+  cart: Array<{id: number, quantity: number, price: number}> = [];
 
   constructor() { }
 
@@ -17,8 +17,12 @@ export class ProductService {
     return of(PRODUCTS);
   }
 
-  getCart(): Observable<{id: number, quantity: number}[]> {
-    return of(this.cart);
+  getCartSize(): number {
+    return this.cart.length;
+  }
+
+  getCartTotalAmount(): number {
+    return this.cart.reduce((total, product) => total + product.price, 0);
   }
 
   getProduct(id: number): Observable<Product> {
@@ -33,6 +37,7 @@ export class ProductService {
     this.cart.push({
       id,
       quantity: 1,
+      price: PRODUCTS.find(product => product.id === id).price,
     });
   }
 
