@@ -1,3 +1,17 @@
-table {
-  width: 60%;
+.table-actions {
+  display: flex;
+
+  table {
+    width: 60%;
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+
+    button {
+      margin-bottom: 10px;
+    }
+  }
 }

@@ -35,4 +35,8 @@ export class ProductDetailComponent implements OnInit {
         this.dataSource = new MatTableDataSource(product.nutrients);
       });
   }
+
+  goBack(): void {
+    this.location.back();
+  }
 }
