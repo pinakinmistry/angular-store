@@ -35,4 +35,8 @@ export class ProductService {
       quantity: 1,
     });
   }
+
+  removeFromCart(id: number): void {
+    this.cart = this.cart.filter(product => product.id !== id);
+  }
 }

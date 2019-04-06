@@ -44,6 +44,10 @@ export class ProductDetailComponent implements OnInit {
     return this.productService.isProductInCart(id);
   }
 
+  removeFromCart(id: number): void {
+    this.productService.removeFromCart(id);
+  }
+
   goBack(): void {
     this.location.back();
   }
