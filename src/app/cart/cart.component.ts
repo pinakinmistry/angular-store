@@ -39,6 +39,10 @@ export class CartComponent implements OnInit {
     return this.productService.getCartSize();
   }
 
+  updateQuantity(event, id) {
+    this.productService.updateQuantity(id, event.target.value);
+  }
+
   backToStore(): void {
     this.router.navigate(['/']);
   }

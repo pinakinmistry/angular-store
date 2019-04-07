@@ -27,7 +27,7 @@ export class ProductService {
   }
 
   getCartTotalAmount(): number {
-    return this.cart.reduce((total, product) => total + product.price, 0);
+    return this.cart.reduce((total, product) => total + product.quantity * product.price, 0);
   }
 
   getProduct(id: number): Observable<Product> {
@@ -50,6 +50,15 @@ export class ProductService {
 
   removeFromCart(id: number): void {
     this.cart = this.cart.filter(product => product.id !== id);
+  }
+
+  updateQuantity(id, updatedQuantity): void {
+    this.cart = this.cart.map(product => {
+      if(product.id === id) {
+        product.quantity = updatedQuantity;
+      }
+      return product;
+    })
   }
 
   clearCart(): void {

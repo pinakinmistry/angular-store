@@ -11,7 +11,7 @@
       <ng-container matColumnDef="quantity">
         <th mat-header-cell *matHeaderCellDef>Quantity</th>
         <td mat-cell *matCellDef="let element">
-          {{element.quantity}}
+          <input type="number" step="1" min=0 matInput [ngModel]="element.quantity" (change)="updateQuantity($event, element.id)">
         </td>
       </ng-container>
       <ng-container matColumnDef="price">
