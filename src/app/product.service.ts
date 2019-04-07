@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 import { Product } from './product';
+import { Cart } from './cart';
 import { PRODUCTS } from './mock-products';
 
 
@@ -9,12 +10,16 @@ import { PRODUCTS } from './mock-products';
   providedIn: 'root'
 })
 export class ProductService {
-  cart: Array<{id: number, quantity: number, price: number}> = [];
+  cart: Array<Cart> = [];
 
   constructor() { }
 
   getProducts(): Observable<Product[]> {
     return of(PRODUCTS);
+  }
+
+  getCart(): Observable<Cart[]> {
+    return of(this.cart);
   }
 
   getCartSize(): number {
@@ -34,14 +39,20 @@ export class ProductService {
   }
 
   addToCart(id: number): void {
+    const product = PRODUCTS.find(product => product.id === id);
     this.cart.push({
       id,
+      name: product.name,
+      price: product.price,
       quantity: 1,
-      price: PRODUCTS.find(product => product.id === id).price,
     });
   }
 
   removeFromCart(id: number): void {
     this.cart = this.cart.filter(product => product.id !== id);
+  }
+
+  clearCart(): void {
+    this.cart = [];
   }
 }
