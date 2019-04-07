@@ -57,7 +57,97 @@ export const PRODUCTS: Product[] = [
       },
       {
         nutrient: 'Vitamin C',
+        dailyValue: .75,
+      },
+    ],
+  },
+  {
+    id: 3,
+    name: 'Grapefruit',
+    description: 'Pink or red, always healthy and delicious',
+    price: 12,
+    image: '',
+    calories: 200,
+    nutrients: [
+      {
+        nutrient: 'Carotenoid',
+        dailyValue: .25,
+      },
+      {
+        nutrient: 'Fiber',
+        dailyValue: .25,
+      },
+      {
+        nutrient: 'Folates',
+        dailyValue: .75,
+      },
+      {
+        nutrient: 'Potassium',
+        dailyValue: .75,
+      },
+      {
+        nutrient: 'Vitamin C',
         dailyValue: 1.0,
+      },
+    ],
+  },
+  {
+    id: 4,
+    name: 'Papaya',
+    description: 'Super popular for breakfast',
+    price: 10,
+    image: '',
+    calories: 250,
+    nutrients: [
+      {
+        nutrient: 'Carotenoid',
+        dailyValue: .50,
+      },
+      {
+        nutrient: 'Fiber',
+        dailyValue: .25,
+      },
+      {
+        nutrient: 'Folates',
+        dailyValue: .25,
+      },
+      {
+        nutrient: 'Potassium',
+        dailyValue: .50,
+      },
+      {
+        nutrient: 'Vitamin C',
+        dailyValue: .0,
+      },
+    ],
+  },
+  {
+    id: 5,
+    name: 'Pineapple',
+    description: 'Enjoy it (but don\'t forget to peel first)',
+    price: 14,
+    image: '',
+    calories: 220,
+    nutrients: [
+      {
+        nutrient: 'Carotenoid',
+        dailyValue: .0,
+      },
+      {
+        nutrient: 'Fiber',
+        dailyValue: .25,
+      },
+      {
+        nutrient: 'Folates',
+        dailyValue: .25,
+      },
+      {
+        nutrient: 'Potassium',
+        dailyValue: .25,
+      },
+      {
+        nutrient: 'Vitamin C',
+        dailyValue: .75,
       },
     ],
   },
