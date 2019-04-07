@@ -1,8 +1,16 @@
 .table-actions {
   display: flex;
 
-  table {
+  .cart-content {
     width: 85%;
+
+    table {
+      width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+    }
   }
 
   .actions {
