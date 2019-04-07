@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
+import { Router, ActivatedRoute } from '@angular/router';
 import {MatTableDataSource} from '@angular/material';
 
 import { Product } from '../product';
@@ -19,7 +18,7 @@ export class ProductDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private location: Location,
+    private router: Router,
     private productService: ProductService,
   ) { }
 
@@ -48,7 +47,7 @@ export class ProductDetailComponent implements OnInit {
     this.productService.removeFromCart(id);
   }
 
-  goBack(): void {
-    this.location.back();
+  backToStore(): void {
+    this.router.navigate(['/']);
   }
 }
