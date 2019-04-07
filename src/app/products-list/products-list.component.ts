@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {MatTableDataSource} from '@angular/material';
 
 import { Product } from '../product';
@@ -13,7 +14,10 @@ export class ProductsListComponent implements OnInit {
   displayedColumns: string[] = ['image', 'name', 'price', 'cartAction'];
   dataSource: MatTableDataSource<Product>;
 
-  constructor(private productService: ProductService) { }
+  constructor(
+    private router: Router,
+    private productService: ProductService
+  ) { }
 
   ngOnInit() {
     this.getProducts();
@@ -30,7 +34,8 @@ export class ProductsListComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  addToCart(id: number): void {
+  addToCart(event, id: number): void {
+    event.stopPropagation();
     this.productService.addToCart(id);
   }
 
@@ -38,7 +43,12 @@ export class ProductsListComponent implements OnInit {
     return this.productService.isProductInCart(id);
   }
 
-  removeFromCart(id: number): void {
+  removeFromCart(event, id: number): void {
+    event.stopPropagation();
     this.productService.removeFromCart(id);
+  }
+
+  showProductDetails(product): void {
+    this.router.navigate(['/product', product.id]);
   }
 }
