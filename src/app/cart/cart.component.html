@@ -7,21 +7,25 @@
         <td mat-cell *matCellDef="let element">
           <h3><a routerLink="/product/{{element.id}}">{{element.name}}</a></h3>
         </td>
+        <td mat-footer-cell *matFooterCellDef><b>Total</b></td>
       </ng-container>
       <ng-container matColumnDef="quantity">
         <th mat-header-cell *matHeaderCellDef>Quantity</th>
         <td mat-cell *matCellDef="let element">
           <input type="number" step="1" min=0 matInput [ngModel]="element.quantity" (change)="updateQuantity($event, element.id)">
         </td>
+        <td mat-footer-cell *matFooterCellDef><b>{{getTotalQuantity()}}</b></td>
       </ng-container>
       <ng-container matColumnDef="price">
-        <th mat-header-cell *matHeaderCellDef></th>
+        <th mat-header-cell *matHeaderCellDef>Price</th>
         <td mat-cell *matCellDef="let element">
           {{element.price | currency}}
         </td>
+        <td mat-footer-cell *matFooterCellDef><b>{{getTotalAmount() | currency}}</b></td>
       </ng-container>
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
     </table>
     <ng-template #noRecord>
       <p>

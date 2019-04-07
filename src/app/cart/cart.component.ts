@@ -39,6 +39,14 @@ export class CartComponent implements OnInit {
     return this.productService.getCartSize();
   }
 
+  getTotalQuantity(): number {
+    return this.productService.getCartTotalQuantity();
+  }
+
+  getTotalAmount(): number {
+    return this.productService.getCartTotalAmount();
+  }
+
   updateQuantity(event, id) {
     this.productService.updateQuantity(id, event.target.value);
   }
