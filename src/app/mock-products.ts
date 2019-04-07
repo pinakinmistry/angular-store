@@ -6,7 +6,7 @@ export const PRODUCTS: Product[] = [
     name: 'Apple',
     description: 'Eat one every day to keep the doctor away!',
     price: 12,
-    image: '',
+    image: 'apple.jpg',
     calories: 90,
     nutrients: [
       {
@@ -33,10 +33,10 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 2,
-    name: 'Grape',
+    name: 'Grapes',
     description: 'Wine is great, but grapes are even better',
     price: 8,
-    image: '',
+    image: 'grapes.jpg',
     calories: 120,
     nutrients: [
       {
@@ -66,7 +66,7 @@ export const PRODUCTS: Product[] = [
     name: 'Grapefruit',
     description: 'Pink or red, always healthy and delicious',
     price: 12,
-    image: '',
+    image: 'grapefruit.jpg',
     calories: 200,
     nutrients: [
       {
@@ -96,7 +96,7 @@ export const PRODUCTS: Product[] = [
     name: 'Papaya',
     description: 'Super popular for breakfast',
     price: 10,
-    image: '',
+    image: 'papaya.jpg',
     calories: 250,
     nutrients: [
       {
@@ -126,7 +126,7 @@ export const PRODUCTS: Product[] = [
     name: 'Pineapple',
     description: 'Enjoy it (but don\'t forget to peel first)',
     price: 14,
-    image: '',
+    image: 'pineapple.jpg',
     calories: 220,
     nutrients: [
       {

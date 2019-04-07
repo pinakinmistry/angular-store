@@ -1,9 +1,10 @@
-<h3>
-  {{product.name}}
-</h3>
-<p>
-  {{product.description}}
-</p>
+<div>
+  <img class="img-medium" src="./assets/images/{{product.image}}" />
+  <b>{{product.name}}: </b>
+  <span class="product-description">
+    {{product.description}}
+  </span>
+</div>
 <div class="table-actions">
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <ng-container matColumnDef="nutrient">

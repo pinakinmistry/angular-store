@@ -2,6 +2,16 @@
 table {
   width: 100%;
 
+  .product-image {
+    width: 160px;
+  }
+
+  .img-small {
+    padding: 10px 0;
+    width: 120px;
+    height: 120px;
+  }
+
   tr.mat-row {
     cursor: pointer;
   }
