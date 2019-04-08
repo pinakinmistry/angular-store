@@ -43,11 +43,11 @@ export class ProductService {
   }
 
   addToCart(id: number): void {
-    const product = PRODUCTS.find(product => product.id === id);
+    const selectedProduct = PRODUCTS.find(product => product.id === id);
     this.cart.push({
       id,
-      name: product.name,
-      price: product.price,
+      name: selectedProduct.name,
+      price: selectedProduct.price,
       quantity: 1,
     });
   }
@@ -58,11 +58,11 @@ export class ProductService {
 
   updateQuantity(id, updatedQuantity): void {
     this.cart = this.cart.map(product => {
-      if(product.id === id) {
+      if (product.id === id) {
         product.quantity = updatedQuantity;
       }
       return product;
-    })
+    });
   }
 
   clearCart(): void {
