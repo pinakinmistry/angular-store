@@ -26,7 +26,9 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Deployment
 
-This app is deployed as github page using `angular-cli-ghpages`
+This app is deployed as github page using `angular-cli-ghpages` at:
+
+https://pinakinmistry.github.io/angular-store/
 
 Refer `https://alligator.io/angular/deploying-angular-app-github-pages/` for details
 
