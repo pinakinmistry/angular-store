@@ -23,6 +23,15 @@
         </td>
         <td mat-footer-cell *matFooterCellDef><b>{{getTotalAmount() | currency}}</b></td>
       </ng-container>
+      <ng-container matColumnDef="cartAction">
+        <th class="cart-action" mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+          <mat-icon (click)="removeFromCart(element.id)">clear</mat-icon>
+        </td>
+        <td mat-footer-cell *matFooterCellDef></td>
+      </ng-container>
+
+      
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>

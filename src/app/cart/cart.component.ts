@@ -11,7 +11,7 @@ import { Cart } from '../cart';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  displayedColumns: string[] = ['name', 'quantity', 'price'];
+  displayedColumns: string[] = ['name', 'quantity', 'price', 'cartAction'];
   dataSource: MatTableDataSource<Cart>;
 
   constructor(
@@ -53,5 +53,10 @@ export class CartComponent implements OnInit {
 
   backToStore(): void {
     this.router.navigate(['/']);
+  }
+
+  removeFromCart(id: number): void {
+    this.productService.removeFromCart(id);
+    this.getCart();
   }
 }
