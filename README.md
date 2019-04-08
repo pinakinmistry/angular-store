@@ -2,7 +2,7 @@
 
 ## Overview
 
-Angular Store is a simple prototype of an online store with following features:
+[Angular Store](https://pinakinmistry.github.io/angular-store/) is a simple prototype of an online store with following features:
 1. Product Listing: Search, add/remove from cart
 2. Product Detail: View details, add/remove from cart
 3. Cart Listing: View selected products, update quantities, remove one, clear cart and show totals
